@@ -1,0 +1,14 @@
+version: '2'
+services:
+    mariadb_local:
+        image: mariadb
+        ports:
+          - 3306:3306
+        container_name: mariadb_local
+        environment:
+          MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+          TZ: Europe/Madrid
+        volumes:
+          - ${DATA_FOLDER}/mysql:/var/lib/mysql
+          - ${DATA_FOLDER}/home:/home
+        restart: always
