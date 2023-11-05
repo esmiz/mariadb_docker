@@ -11,4 +11,4 @@ services:
         volumes:
           - ${DATA_FOLDER}/mysql:/var/lib/mysql
           - ${DATA_FOLDER}/home:/home
-        restart: always
+        restart: ${RESTART}
